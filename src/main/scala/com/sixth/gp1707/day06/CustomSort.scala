@@ -16,9 +16,9 @@ object CustomSort {
 
     val girlInfo: RDD[(String, Int, Int)] = sc.parallelize(Array(("xuaner", 100, 16),("tuoer",100,18),("langer", 90, 20)))
 
-    // 方式一,使用饮食转换
+    // 方式一,使用隐式转换
 //    import MyPredef.girlOrdering
-//
+
 //    val res: RDD[(String, Int, Int)] = girlInfo.sortBy(goddess => Girl(goddess._2, goddess._3), false)
 //    println(res.collect.toBuffer)
 

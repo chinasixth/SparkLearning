@@ -17,6 +17,8 @@ object Accumulator {
 
     // 累加器
     val sum: Accumulator[Int] = sc.accumulator(0)
+//    如果使用一般的数据去累加，最后的结果是0
+//    var sum = 0;
 
     // 累加到sum
     numbers.foreach(number => sum.+=(number))

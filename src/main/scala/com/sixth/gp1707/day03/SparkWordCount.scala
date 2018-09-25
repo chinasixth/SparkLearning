@@ -13,15 +13,19 @@ object SparkWordCount {
   def main(args: Array[String]): Unit = {
     val conf: SparkConf = new SparkConf()
     conf.setAppName("SparkWordCount")
-//      .setMaster("local[*]")
-      .set("fs.defaultFS", "hdfs://liuhao")
+//      .setAppName(this.getClass.getName)
+      .setMaster("local[*]")
+//      .set("fs.defaultFS", "hdfs://liuhao")
 
     // 创建上下文对象，也成为集群的入口类
     val sc: SparkContext = new SparkContext(conf)
 
     // 获取数据
 //    val lines: RDD[String] = sc.textFile("hdfs://liuhao/1.sh")
-    val lines: RDD[String] = sc.textFile(args(0))
+    val lines: RDD[String] = sc.textFile("E:\\QF\\spark\\sparkcoursesinfomation\\project\\logmonitor\\log.txt")
+//    sc.parallelize()
+    // new ParallelCollectionRDD()
+//    lines.foreachPartition()
 
     // 将数据切分并压平
     val words: RDD[String] = lines.flatMap(_.split(" "))

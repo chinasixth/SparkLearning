@@ -53,7 +53,7 @@ object SubjectCount_3 {
     //      subjectAndUrlAndCount.partitionBy(new HashPartitioner(3))
 
     // 获取所有的学科信息，一个学科信息对应一个分区，一个分区对应一个文件
-    // keys获取所有的key
+  // keys获取所有的key
     // 因为要将学科信息传入自定义分区器，所以要collect
 
     val subjects: Array[String] =
